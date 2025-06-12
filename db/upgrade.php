@@ -34,7 +34,7 @@ function xmldb_block_studentstracker_upgrade($oldversion) {
 
     $dbman = $DB->get_manager();
 
-    if ($oldversion < 2025051200) {
+    if ($oldversion < 2025051101) {
         $table = new xmldb_table('block_studentstracker_notes');
 
         $table->add_field('id', XMLDB_TYPE_INTEGER, '10', null, XMLDB_NOTNULL, XMLDB_SEQUENCE, null);
@@ -52,7 +52,7 @@ function xmldb_block_studentstracker_upgrade($oldversion) {
         }
 
         // Studentstracker savepoint reached.
-        upgrade_plugin_savepoint(true, 2025051200, 'block', 'studentstracker');
+        upgrade_plugin_savepoint(true, 2025051101, 'block', 'studentstracker');
     }
 
     return true;
